@@ -1,0 +1,14 @@
+// Place all the behaviors and hooks related to the matching controller here.
+// All this logic will automatically be available in application.js.
+
+$('.chronic_ping').focusout(function() {
+  var input_field = this;
+  $.ajax({
+    type: "POST",
+    url: "<%= ChronicPing.config.relative_root_url %>/chronic_ping/parse",
+    data: { q: this.value },
+    dataType: "json"
+  }).done(function( msg ) {
+    input_field.value = msg.response;
+  });
+});
