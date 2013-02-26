@@ -3,6 +3,8 @@ chronic_ping
 
 Simple rails engine that uses ajax to ping Chronic, giving users imediate feedback regarding the date they entered in a text field.
 
+[![Build Status](https://travis-ci.org/biola/chronic_ping.png)](https://travis-ci.org/biola/chronic_ping)
+
 Requirements
 ------------
 
