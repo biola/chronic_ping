@@ -1,4 +1,4 @@
-class ChronicPingController < ApplicationController
+class ChronicPingController < ActionController::Base
   def parse
     unless params[:q].blank?
       begin
