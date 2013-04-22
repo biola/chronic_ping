@@ -5,7 +5,7 @@ $('.chronic_ping').focusout(function() {
   var input_field = this;
   $.ajax({
     type: "POST",
-    url: "<%= ChronicPing.config.relative_root_url %>/chronic_ping/parse",
+    url: "<%= ENV['RAILS_RELATIVE_URL_ROOT'] %>/chronic_ping/parse",
     data: { q: this.value },
     dataType: "json"
   }).done(function( msg ) {

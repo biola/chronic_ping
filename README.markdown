@@ -33,7 +33,6 @@ The following values are already set by default, but if you want to customize th
 
     ChronicPing.configure do |config|
       config.datetime_format = "%B %d, %Y at %I:%M%p"
-      config.relative_root_url = ""
     end
 
 License

@@ -1,11 +1,13 @@
 module ChronicPing
   class Configuration
     attr_accessor :datetime_format
-    attr_accessor :relative_root_url
 
     def initialize
       @datetime_format = '%B %d, %Y at %I:%M%p'
-      @relative_root_url = ""
+    end
+
+    def relative_root_url=(relative_url_root)
+      warn "[DEPRECATION] `ChronicPing.config.relative_url_root=` is deprecated. ENV['RAILS_RELATIVE_URL_ROOT'] will be used during asset:precompile instead."
     end
   end
 end
