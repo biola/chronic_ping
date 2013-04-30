@@ -2,11 +2,11 @@
 // All this logic will automatically be available in application.js.
 
 $('.chronic_ping').focusout(function() {
-  var input_field = this;
+  input_field = this
   $.ajax({
     type: "POST",
     url: "<%= ENV['RAILS_RELATIVE_URL_ROOT'] %>/chronic_ping/parse",
-    data: { q: this.value },
+    data: { q: this.value, f: $(this).data('format') },
     dataType: "json"
   }).done(function( msg ) {
     input_field.value = msg.response;

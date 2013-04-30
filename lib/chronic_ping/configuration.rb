@@ -1,9 +1,21 @@
 module ChronicPing
   class Configuration
-    attr_accessor :datetime_format
+    attr_accessor :formats
 
     def initialize
-      @datetime_format = '%B %d, %Y at %I:%M%p'
+      @formats = {
+        default:  '%B %d, %Y at %I:%M%p',
+        datetime: '%B %d, %Y at %I:%M%p',
+        date:     '%B %d, %Y'
+      }
+    end
+
+    def formats
+      @formats.with_indifferent_access
+    end
+
+    def datetime_format=(format)
+      warn "[DEPRECATION] `ChronicPing.config.datetime_format=` is deprecated. Use ChronicPing.config.formats= instead."
     end
 
     def relative_root_url=(relative_url_root)
