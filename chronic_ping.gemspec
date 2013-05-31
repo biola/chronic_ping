@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ChronicPing::VERSION
   s.authors     = ["Ryan Hall"]
   s.email       = ["ryan@allegroapps.com"]
-  s.homepage    = "https://github.com/biola/chronic_ping"
+  s.homepage    = "https://chronic-ping.herokuapp.com"
   s.summary     = "Uses ajax and chronic to parse date text_fields"
   s.description = "Simple rails engine that uses ajax to ping Chronic, giving users imediate feedback regarding the date they entered in a text field."
 
