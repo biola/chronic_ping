@@ -34,7 +34,7 @@ Customize
 The following values are already set by default, but if you want to customize them, create a file called `config/initializers/chronic_ping.rb` that should look something like this:
 
     ChronicPing.configure do |config|
-      config.format = {
+      config.formats = {
         default:        '%B %d, %Y at %I:%M%p',
         datetime:       '%B %d, %Y at %I:%M%p',
         date:           '%B %d, %Y',
