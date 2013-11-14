@@ -1,14 +1,25 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-$('.chronic_ping').focusout(function() {
-  input_field = this
+var parseField = function(input_field) {
   $.ajax({
     type: "POST",
     url: "<%= ENV['RAILS_RELATIVE_URL_ROOT'] %>/chronic_ping/parse",
-    data: { q: this.value, f: $(this).data('format') },
+    data: { q: input_field.value, f: $(input_field).data('format') },
     dataType: "json"
   }).done(function( msg ) {
     input_field.value = msg.response;
   });
+}
+
+$('.chronic_ping').change(function() {
+  parseField(this);
+});
+
+$('.chronic_ping').keydown(function(e) {
+  if (e.keyCode == 13) {
+    parseField(this);
+    e.preventDefault();
+    e.stopPropagation();
+  }
 });
