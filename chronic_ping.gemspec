@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://chronic-ping.herokuapp.com"
   s.summary     = "Uses ajax and chronic to parse date text_fields"
   s.description = "Simple rails engine that uses ajax to ping Chronic, giving users imediate feedback regarding the date they entered in a text field."
+  s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.markdown"]
 
