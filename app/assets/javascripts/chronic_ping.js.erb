@@ -12,14 +12,16 @@ var parseField = function(input_field) {
   });
 }
 
-$('.chronic_ping').change(function() {
-  parseField(this);
-});
-
-$('.chronic_ping').keydown(function(e) {
-  if (e.keyCode == 13) {
+$(document).ready(function() {
+  $('.chronic_ping').change(function() {
     parseField(this);
-    e.preventDefault();
-    e.stopPropagation();
-  }
+  });
+
+  $('.chronic_ping').keydown(function(e) {
+    if (e.keyCode == 13) {
+      parseField(this);
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
 });
